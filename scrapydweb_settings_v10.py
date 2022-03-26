@@ -27,8 +27,7 @@ ENABLE_AUTH = False
 if os.environ.get('ENABLE_AUTH', 'False') == 'True':
     ENABLE_AUTH = True
 # In order to enable basic auth, both USERNAME and PASSWORD should be non-empty strings.
-USERNAME = ''
-PASSWORD = ''
+
 USERNAME = os.environ.get('USERNAME', 'admin')
 PASSWORD = os.environ.get('PASSWORD', 'scrapydweb')
 
@@ -87,7 +86,7 @@ LOCAL_SCRAPYD_LOGS_DIR = ''
 # Note that you can run the LogParser service separately via command 'logparser' as you like.
 # Run 'logparser -h' to find out the config file of LogParser for more advanced settings.
 # Visit https://github.com/my8100/logparser for more info.
-ENABLE_LOGPARSER = False
+ENABLE_LOGPARSER = True
 ############################## QUICK SETUP end ################################
 ############################## 快速设置 结束 ###################################
 
@@ -155,7 +154,7 @@ SCHEDULE_ROBOTSTXT_OBEY = None
 SCHEDULE_COOKIES_ENABLED = None
 
 # The default is None, set it to a non-negative integer to customize the default value of `CONCURRENT_REQUESTS`.
-SCHEDULE_CONCURRENT_REQUESTS = None
+SCHEDULE_CONCURRENT_REQUESTS = 32
 
 # The default is None, set it to a non-negative number to customize the default value of `DOWNLOAD_DELAY`.
 SCHEDULE_DOWNLOAD_DELAY = None
